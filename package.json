@@ -1,0 +1,35 @@
+{
+	"name": "insomnia-plugin-postman-export",
+	"version": "0.1.0",
+	"main": "main.js",
+	"description": "This is a plugin for [insomnia](https://insomnia.rest) for exporting its request data in Postman format.",
+	"homepage": "https://github.com/Vyoam/insomnia-plugin-postman-export",
+	"keywords": [
+		"insomnia",
+		"plugin",
+		"postman",
+		"export",
+		"convert",
+		"collection",
+		"format"
+	],
+	"insomnia": {
+		"name": "postman-export",
+		"description": "This plugin allows exporting requests in Postman format",
+		"displayName": "Postman Export",
+		"publisher": {
+			"name": "Vyoam"
+		},
+		"applications": {
+			"designer": "*",
+			"core": "*",
+			"cli": "*"
+		}
+	},
+	"dependencies": {
+		"uuid": "^8.3.2",
+		"mkdirp": "^1.0.4",
+		"slugify": "^1.4.5",
+		"untildify": "^4.0.0"
+	}
+}
