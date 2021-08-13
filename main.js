@@ -79,7 +79,7 @@ module.exports.workspaceActions = [{
             'Regex Filter (Default matches all; ^$ matches none)',
             {
               submitName: 'OK',
-              defaultValue: '^$'
+              defaultValue: '.*'
             }
         );
 
@@ -94,7 +94,7 @@ module.exports.workspaceActions = [{
         let outputPath = await context.app.prompt(
           'Output Path (e.g ~/Documents/My-Docs)',
           {
-            submitName: 'Export',
+            submitName: 'Initiate (Please Wait for "All Done!")',
             defaultValue: await context.store.getItem(outputPathConfigKey)
           }
         );
