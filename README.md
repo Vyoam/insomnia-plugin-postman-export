@@ -1,6 +1,6 @@
 # insomnia-plugin-postman-export
 
-[beta; npm publish pending; use manually by copying to the Appendix 1 folder]  
+[beta; npm publish pending; use manually by copying to the Appendix 1 folder and (for the 1st time) running 'npm install']  
 
 Adds 'Export as Postman Collection' option in Collection (Workspace) menu  
 Requests can be selected via regex or a csv of request ids (the filters don't work at folder levels currently)
