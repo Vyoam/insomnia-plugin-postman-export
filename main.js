@@ -1,6 +1,6 @@
 /*
 todo...
-* sync up this script with insomnia PR work
+* sync up this script with insomnia PR work: https://github.com/Kong/insomnia/pull/3827
 * use native insomnia file dialog?
 * test and clean up. e.g. exported file name etc.
 * recheck wrt prompts?
@@ -47,6 +47,10 @@ https://github.com/techchrism/insomnia-plugin-valorant
 
 module.exports vs. export default in Node.js and ES6 - Stack Overflow
 https://stackoverflow.com/questions/40294870/module-exports-vs-export-default-in-node-js-and-es6
+
+Create npm account online
+npm login
+npm publish
 
  */
 
@@ -134,7 +138,7 @@ module.exports.workspaceActions = [{
             workspaceIds: workspaceIdsFilterCsv.split(',')
           };
 
-          fs.writeFileSync(path.join(outputPath, 'insomnia.json'), postmanExport.transformData(data, filters));
+          fs.writeFileSync(path.join(outputPath, 'requests.postman_collection.json'), postmanExport.transformData(data, filters));
         } catch (_) {
           await context.app.alert(
             'Something went wrong!',

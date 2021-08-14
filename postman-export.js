@@ -7,11 +7,26 @@ const inputFileName = 'requests.json';//process.argv.length > 2 ? process.argv[2
     process.exit(1);
 }*/
 
-function transformUrl(insomniaUrl) {
+function transformUrl(insomniaUrl, insomniaUrlParams) {
     if (insomniaUrl === '') return {};
     var postmanUrl = {};
     postmanUrl.raw = insomniaUrl;
-    var urlParts = insomniaUrl.split(/\:\/\//);
+    if (insomniaUrlParams && insomniaUrlParams.length > 0) {
+        postmanUrl.query = [];
+        if(postmanUrl.raw !== undefined && postmanUrl.raw.includes("?")) {
+            const rawUrlSplit = postmanUrl.raw.split("?");
+            postmanUrl.raw = rawUrlSplit[0];
+            const rawUrlParams = rawUrlSplit[1].split("&");
+            rawUrlParams.forEach(kvPair => {
+                const kvPairSplit = kvPair.split("=");
+                postmanUrl.query.push({key: kvPairSplit[0], value: kvPairSplit[1]});
+            });
+        } // maybe this mixing should be allowed in insomnia itself (but as long as it's there the above will take care of honoring it); I think I once saw duplication of a kv pair with the older value retained in the duplicate kv pair
+        insomniaUrlParams.forEach(param => {
+            postmanUrl.query.push({key: param.name, value: param.value});
+        });
+    }
+    var urlParts = postmanUrl.raw.split(/\:\/\//);
     var rawHostAndPath;
     if (urlParts.length === 1) {
         rawHostAndPath=urlParts[0];
@@ -87,16 +102,7 @@ function transformItem(insomniaItem) {
     if ( Object.keys(insomniaItem.body).length !== 0 ) {
         request.body = transformBody(insomniaItem.body);
     }
-    request.url = transformUrl(insomniaItem.url);
-    if (insomniaItem.parameters && insomniaItem.parameters.length > 0) {
-        if(request.url.raw !== undefined && request.url.raw.includes("?")) {
-            console.warn("Warning: Query params detected in both the raw query and the 'parameters' object of Insomnia request!!! Exported Postman collection may need manual editing for erroneous '?' in url.");
-        }
-        request.url.query = [];
-        insomniaItem.parameters.forEach(param => {
-            request.url.query.push({key: param.name, value: param.value});
-        });
-    }
+    request.url = transformUrl(insomniaItem.url, insomniaItem.parameters);
     request.auth = {}; // todo
     if ( Object.keys(insomniaItem.authentication).length !== 0 ) {
         console.warn("Warning: Auth param export not yet supported!!!");
