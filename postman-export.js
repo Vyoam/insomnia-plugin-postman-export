@@ -21,7 +21,7 @@ function transformUrl(insomniaUrl, insomniaUrlParams) {
                 const kvPairSplit = kvPair.split("=");
                 postmanUrl.query.push({key: kvPairSplit[0], value: kvPairSplit[1]});
             });
-        } // maybe this mixing should be allowed in insomnia itself (but as long as it's there the above will take care of honoring it); I think I once saw duplication of a kv pair with the older value retained in the duplicate kv pair
+        } // maybe this mixing should not be allowed in insomnia itself (but as long as it's there the above will take care of honoring it); I think I once saw duplication of a kv pair with the older value retained in the duplicate kv pair
         insomniaUrlParams.forEach(param => {
             postmanUrl.query.push({key: param.name, value: param.value});
         });
