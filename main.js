@@ -13,6 +13,7 @@ todo...
 * unit tests
 * folder level filter?
 * missing functionality
+* enable standalone use as script; archive old repo
  */
 
 /*
