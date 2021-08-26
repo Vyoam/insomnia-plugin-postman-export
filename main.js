@@ -8,6 +8,8 @@ todo...
   https://github.com/search?q=context.app.prompt+insomnia&type=code
 * above point but with a UI similar to the default export modal
 * request/folder level export - addnl insomnia function exports needed
+  FOR LARGE WORKSPACES, the experience is slow as of current flow.
+  Direct request/folder level export will help solve it a bit... Tho not sure how much.
 ...
 * update version, publish... ci/cd wrt dependencies needed?
 * unit tests
