@@ -5,7 +5,7 @@ todo...
 * better error handling and presentation needed? ref.: when issues happen due to insomnia changes. e.g. https://github.com/Vyoam/insomnia-plugin-postman-export/issues/2
 * enable standalone use as script; archive old repo
 * use native insomnia file dialog?
-* test and clean up. e.g. exported file name etc.
+* test and general clean up.
 * recheck wrt prompts?
   https://github.com/search?q=context.app.dialog+insomnia&type=code
   https://github.com/search?q=context.app.prompt+insomnia&type=code
@@ -85,7 +85,7 @@ module.exports.workspaceActions = [{
       try {
 
         let regexFilter = await context.app.prompt(
-            'Regex Filter (Default matches all; ^$ matches none)',
+            'Filter Option 1: Regex (Default matches all; ^$ matches none)',
             {
               submitName: 'OK',
               defaultValue: '.*'
@@ -93,7 +93,7 @@ module.exports.workspaceActions = [{
         );
 
         let workspaceIdsFilterCsv = await context.app.prompt(
-            'Workspace Id Filter CSV (Leave blank to skip)',
+            'Filter Option 2: Request Id CSV (Leave blank to skip)',
             {
               submitName: 'OK',
               defaultValue: ''
