@@ -15,7 +15,7 @@
 	],
 	"insomnia": {
 		"name": "postman-export",
-		"description": "This plugin allows exporting requests in Postman format",
+		"description": "This plugin allows exporting requests in Postman format.",
 		"displayName": "Postman Export",
 		"publisher": {
 			"name": "Vyoam"
