@@ -109,13 +109,12 @@ module.exports.workspaceActions = [{
         );
 
         if (!outputPath.length) {
-          outputPath = path.join(
-            context.app.getPath('desktop'),
-            `${slugify(models.workspace.name)}-API-Docs`
-          );
+          outputPath = context.app.getPath('desktop');
         } else {
           outputPath = untildify(outputPath);
         }
+
+        let outputFilename = `${slugify(models.workspace.name)}.postman_collection.json`;
 
         await context.store.setItem(outputPathConfigKey, outputPath);
 
@@ -143,7 +142,7 @@ module.exports.workspaceActions = [{
             workspaceIds: workspaceIdsFilterCsv.split(',')
           };
 
-          fs.writeFileSync(path.join(outputPath, 'requests.postman_collection.json'), postmanExport.transformData(data, filters));
+          fs.writeFileSync(path.join(outputPath, outputFilename), postmanExport.transformData(data, filters));
         } catch (_) {
           await context.app.alert(
             'Something went wrong!',
