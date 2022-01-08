@@ -1,9 +1,14 @@
 {
 	"name": "insomnia-plugin-postman-export",
-	"version": "0.8.4",
+	"version": "0.8.6",
 	"main": "main.js",
+	"license": "MIT",
 	"description": "This is a plugin for [insomnia](https://insomnia.rest) for exporting its request data in Postman format.",
 	"homepage": "https://github.com/Vyoam/insomnia-plugin-postman-export",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Vyoam/insomnia-plugin-postman-export"
+	},
 	"keywords": [
 		"insomnia",
 		"plugin",

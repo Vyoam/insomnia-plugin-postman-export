@@ -84,6 +84,13 @@ function transformBody(insomniaBody) {
             body.file.src = "/C:/PleaseSelectAFile";
             console.warn("Warning: A file is supposed to be a part of the request!!! Would need to be manually selected in Postman.");
             break;
+		case "application/graphql":
+            var graphqlBody = JSON.parse(insomniaBody.text);
+            body.mode = "graphql";
+            body.graphql = {};
+            body.graphql.query = graphqlBody.query;
+            body.graphql.variables = JSON.stringify(graphqlBody.variables)
+            break;
         default:
             console.warn("Warning: Body type unsupported; skipped!!! ... " + insomniaBody.mimeType);
             body.mode = "raw";
