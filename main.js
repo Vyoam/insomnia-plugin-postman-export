@@ -1,6 +1,8 @@
 /*
 todo...
 * sync up this script with insomnia PR work: https://github.com/Kong/insomnia/pull/3827
+* show progress bar/spinner while processing is done
+* warn users against extra spaces in csv
 * keep order; handle more types of data. Ref.: https://github.com/Vyoam/InsomniaToPostmanFormat/blob/main/convertJsonFile.js
 * better error handling and presentation needed? ref.: when issues happen due to insomnia changes. e.g. https://github.com/Vyoam/insomnia-plugin-postman-export/issues/2
 * enable standalone use as script; archive old repo
