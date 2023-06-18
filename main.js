@@ -1,5 +1,6 @@
 /*
 todo...
+* june 2023 - Filter Option 2 stopped working, unless the prompt input is non-blank. Put a workaround with a hardcoded 'none'... have a better fix
 * sync up this script with insomnia PR work: https://github.com/Kong/insomnia/pull/3827
 * show progress bar/spinner while processing is done
 * warn users against extra spaces in csv
@@ -95,10 +96,10 @@ module.exports.workspaceActions = [{
         );
 
         let workspaceIdsFilterCsv = await context.app.prompt(
-            'Filter Option 2: Request Id CSV (Leave blank to skip)',
+            'Filter Option 2: Request Id CSV (Leave as "none" to skip)',
             {
               submitName: 'OK',
-              defaultValue: ''
+              defaultValue: 'none'
             }
         );
 
