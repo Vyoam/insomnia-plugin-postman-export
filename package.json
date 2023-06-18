@@ -1,6 +1,6 @@
 {
 	"name": "insomnia-plugin-postman-export",
-	"version": "0.8.7",
+	"version": "0.8.8",
 	"main": "main.js",
 	"license": "MIT",
 	"description": "This is a plugin for [insomnia](https://insomnia.rest) for exporting its request data in Postman format.",
