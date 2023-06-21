@@ -17,6 +17,8 @@ Note: request id can be copied from the settings dialog of the request.
 
 ![image](https://github.com/Vyoam/insomnia-plugin-postman-export/assets/1176140/88b444a0-7de3-45cf-8aac-628a6118ed1f)
 
+![image](https://github.com/Vyoam/insomnia-plugin-postman-export/assets/1176140/24721240-576a-4739-aff5-df60890b929a)
+
 ###### For reference, Insomnia plugin locations:
 MacOS: ~/Library/Application Support/Insomnia/plugins/  
 Windows: %APPDATA%\Insomnia\plugins\  
