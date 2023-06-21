@@ -9,8 +9,12 @@ https://insomnia.rest/plugins/insomnia-plugin-postman-export
 https://www.npmjs.com/package/insomnia-plugin-postman-export  
 
 ![image](https://github.com/Vyoam/insomnia-plugin-postman-export/assets/1176140/7cb76dbd-d012-4fca-ab0d-e86615f33b11)
+
 ![image](https://github.com/Vyoam/insomnia-plugin-postman-export/assets/1176140/335c1f60-f42c-476c-b065-bf7b4a4f3841)
+
 ![image](https://github.com/Vyoam/insomnia-plugin-postman-export/assets/1176140/f8ef35c3-4184-4127-a18d-bc9a9ec695b8)
+Note: request id can be copied from the settings dialog of the request.
+
 ![image](https://github.com/Vyoam/insomnia-plugin-postman-export/assets/1176140/88b444a0-7de3-45cf-8aac-628a6118ed1f)
 
 ###### For reference, Insomnia plugin locations:
