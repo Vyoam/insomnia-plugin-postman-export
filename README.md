@@ -17,3 +17,4 @@ https://www.npmjs.com/package/insomnia-plugin-postman-export
 MacOS: ~/Library/Application Support/Insomnia/plugins/  
 Windows: %APPDATA%\Insomnia\plugins\  
 Linux: $XDG_CONFIG_HOME/Insomnia/plugins/ or ~/.config/Insomnia/plugins/  
+Ref.: https://docs.insomnia.rest/insomnia/introduction-to-plugins#plugin-file-location
