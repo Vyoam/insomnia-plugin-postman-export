@@ -1,5 +1,6 @@
 /*
 todo...
+* folder level filter. p.s. Performing a regex/csv match for non-root in parentChildrenMap.get(element._id).forEach() then a recursive call with .* regex for the true case might do it?
 * june 2023 - Filter Option 2 stopped working, unless the prompt input is non-blank. Put a workaround with a hardcoded 'none'... have a better fix
 * sync up this script with insomnia PR work: https://github.com/Kong/insomnia/pull/3827
 * show progress bar/spinner while processing is done
@@ -13,13 +14,12 @@ todo...
   https://github.com/search?q=context.app.dialog+insomnia&type=code
   https://github.com/search?q=context.app.prompt+insomnia&type=code
 * above point but with a UI similar to the default export modal
-* request/folder level export - addnl insomnia function exports needed
+* request/folder level export - addnl insomnia function exports needed (p.s. I think this was in context of a menu option at folder level)
   FOR LARGE WORKSPACES, the experience is slow as of current flow.
   Direct request/folder level export will help solve it a bit... Tho not sure how much.
 ...
 * update version, publish... ci/cd wrt dependencies needed?
 * unit tests
-* folder level filter?
 * missing functionality
  */
 
