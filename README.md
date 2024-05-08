@@ -1,5 +1,7 @@
 # insomnia-plugin-postman-export
 
+_Update (May 2024): Recently, Postman seems to have added Insomnia import natively - https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-from-insomnia/. Though I haven't tested it yet. Nevertheless, this plugin probably won't be needed anymore._
+
 * Adds 'Export as Postman Collection' option in Collection (Workspace) menu  
 * Requests can be selected via regex or a csv of request ids (the filters don't work at folder levels currently)  
 * See todo section in [main.js](https://github.com/Vyoam/insomnia-plugin-postman-export/blob/main/main.js) for limitations and enhancement plans. (Also have some todos listed [here](https://github.com/Vyoam/InsomniaToPostmanFormat/blob/main/convertJsonFile.js), some of which were done as part of the the rejected [PR](https://github.com/Kong/insomnia/pull/3827) but need to be added to the plugin also.)
