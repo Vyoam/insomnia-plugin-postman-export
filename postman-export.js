@@ -7,6 +7,19 @@ const inputFileName = 'requests.json';//process.argv.length > 2 ? process.argv[2
     process.exit(1);
 }*/
 
+function transformEnvironments(insomniaResources) {
+    const environments = insomniaResources.filter(resource => resource._type === 'environment');
+    if (environments.length === 0) return [];
+
+    const environment = environments[0];
+    const variables = environment.kvPairData.map(pair => ({
+        key: pair.name,
+        value: pair.value
+    }));
+
+    return variables;
+}
+
 function transformUrl(insomniaUrl, insomniaUrlParams) {
     if (insomniaUrl === '') return {};
     var postmanUrl = {};
@@ -212,7 +225,8 @@ module.exports.transformData = (inputDataString, filters) => {
             "name": "",
             "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
         },
-        "item": []
+        "item": [],
+        "variable": []
     };
 
     outputData.info._postman_id = uuidv4();
@@ -227,6 +241,11 @@ module.exports.transformData = (inputDataString, filters) => {
     }
 
     outputData.info.name = inputFileName.slice(0, -5); // assuming extension is .json
+
+    const environmentVariables = transformEnvironments(inputData.resources);
+    if (environmentVariables.length > 0) {
+        outputData.variable.push(...environmentVariables);
+    }
 
     return JSON.stringify(outputData);
 
