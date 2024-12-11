@@ -258,7 +258,7 @@ module.exports.transformData = (inputDataString, filters) => {
         outputData.variable.push(...environmentVariables);
     }
 
-    return JSON.stringify(outputData, null, 2);
+    return JSON.stringify(outputData);
 
 }
 
