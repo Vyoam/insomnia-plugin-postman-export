@@ -130,6 +130,17 @@ function transformItem(insomniaItem) {
     }
     postmanItem.request = request;
     postmanItem.response = [];
+
+    if (insomniaItem.afterResponseScript && insomniaItem.afterResponseScript.trim() !== "") {
+        postmanItem.event = [{
+            listen: "test",
+            script: {
+                type: "text/javascript",
+                exec: insomniaItem.afterResponseScript.split('\n').map(line => line.trim().replace("insomnia", "pm"))
+            }
+        }];
+    }
+
     return postmanItem;
 }
 
